@@ -6,6 +6,7 @@ import { Typography,Box ,Stack} from '@mui/material'
 import TotalModal from './TotalModal'
 import NavBar from './NavBar'
 import FormatShapesIcon from '@mui/icons-material/FormatShapes';
+import { teal,deepOrange,green } from '@mui/material/colors';
 uuidv4()
 
 
@@ -92,14 +93,19 @@ const plus = id =>{
     flexDirection:'column',
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor:'orange',
-    height:'100vh',
+    backgroundColor:green[200],
+    height:'90vh',
     width:'100vw',
-    mt:0
+    mt:5
   }}
 >
 
-     
+     <Stack width={'100%'}  direction="column"
+        spacing={2}
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+        }} >
       <ToDoList addTodo={addTodo} />
 
       {todos.map((todo,index) => (
@@ -114,7 +120,7 @@ const plus = id =>{
             />
       ))
       }
-     
+     </Stack>
     <TotalModal player={ todos.map((todo,index) => (<Typography key={index}>{todo.task}</Typography>))}
     numba={ todos.map((todo,index) => (<Typography key={index}>{todo.num}</Typography>))}
     allNumbers={allNumbers}

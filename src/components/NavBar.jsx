@@ -6,12 +6,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { teal } from '@mui/material/colors';
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
-        <Toolbar>
+    <Box sx={{ flexGrow: 1, backgroundColor:teal[600]}}>
+      <AppBar position="fixed" >
+        <Toolbar sx={{backgroundColor:teal[600]}}>
          
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
            55 Cash

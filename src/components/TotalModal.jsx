@@ -3,6 +3,7 @@ import {Box,styled} from '@mui/material'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { teal,deepOrange,green } from '@mui/material/colors';
 
 const style = {
   position: 'absolute',
@@ -11,7 +12,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: '80%',
   height:'80%',
-  bgcolor: 'green',
+  bgcolor: teal[400],
   border: '2px solid #000',
   boxShadow: 24,
   color:'white',
