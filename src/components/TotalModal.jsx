@@ -29,6 +29,7 @@ const BypassButton = styled(Button)(({ theme }) => ({
   width:220,
   borderRadius:10,
   margin:8,
+  backgroundColor: teal[700],
  
   //border:10
  }));
@@ -41,7 +42,7 @@ export default function BasicModal({player,numba,totalos,allNumbers}) {
 
   return (
     <div>
-      <BypassButton sx={{mb:2}}  variant="contained" onClick={() => { handleOpen(), allNumbers()}}>
+      <BypassButton  sx={{mb:2 }}  variant="contained" onClick={() => { handleOpen(), allNumbers()}}>
         Total
       </BypassButton>
       <Modal

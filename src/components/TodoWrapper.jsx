@@ -93,7 +93,7 @@ const plus = id =>{
     flexDirection:'column',
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor:green[200],
+    backgroundColor:green[400],
     height:'90vh',
     width:'100vw',
     mt:5
