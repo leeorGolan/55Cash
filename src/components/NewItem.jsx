@@ -5,14 +5,18 @@ import RemoveIcon from '@mui/icons-material/Remove';
 function NewItem({newTask,tasks,props,itemName,num,minus,plus}) {
   return (
     <div>
-        <ListItem >
-    <Typography>{itemName}</Typography>
-    <IconButton onClick={plus}><AddIcon/></IconButton>
-    <Typography>{num}</Typography>
-    <IconButton onClick={minus}  ><RemoveIcon/></IconButton>
-</ListItem>
+      <ListItem>
+        <IconButton onClick={plus}>
+          <AddIcon />
+        </IconButton>
+        <Typography>{num}</Typography>
+        <IconButton onClick={minus}>
+          <RemoveIcon />
+        </IconButton>
+        <Typography>{itemName}</Typography>
+      </ListItem>
     </div>
-  )
+  );
 }
 
 export default NewItem

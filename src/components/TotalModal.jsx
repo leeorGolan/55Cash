@@ -3,7 +3,7 @@ import {Box,styled} from '@mui/material'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { teal,deepOrange,green } from '@mui/material/colors';
+import { teal,deepOrange,green,blueGrey } from '@mui/material/colors';
 
 const style = {
   position: 'absolute',
@@ -12,8 +12,8 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: '80%',
   height:'80%',
-  bgcolor: teal[400],
-  border: '2px solid #000',
+  bgcolor: blueGrey[400],
+  //border: '2px solid #000',
   boxShadow: 24,
   color:'white',
   p: 4,
@@ -52,22 +52,22 @@ export default function BasicModal({player,numba,totalos,allNumbers}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h4" component="h2" >
+          <Typography id="modal-modal-title" variant="h4" component="h2" sx={{ color:teal[900]}}>
             Total
           </Typography>
 
           <Box sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between', backgroundColor:'',width:'100%'}}>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <Typography variant='h5'  sx={{ mt: 2 ,color:teal[900]}}>
               {player}
             </Typography>
 
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <Typography  variant='h4' sx={{ mt: 2 ,color:teal[900]}}>
               {numba}
             </Typography>
           </Box>
 
-          <Typography  sx={{ mt: 2 }} >
-            סך הכל קניה  {totalos}
+          <Typography variant='h4'  sx={{ mt: 2 ,color:teal[900]}} >
+            סך הכל ריביי {totalos}
             </Typography>
         </Box>
       </Modal>
