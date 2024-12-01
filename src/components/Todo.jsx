@@ -3,7 +3,7 @@ import {Box,TextField,Button,List,Typography,Stack,IconButton} from '@mui/materi
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { teal,deepOrange,green,lightGreen,blueGrey } from '@mui/material/colors';
+import { teal,deepOrange,green,lightGreen,blueGrey,red } from '@mui/material/colors';
 
 function Todo({task,toggleComplete,deleteTodo,editTodo,num,plus,minus}) {
 
@@ -28,11 +28,14 @@ function Todo({task,toggleComplete,deleteTodo,editTodo,num,plus,minus}) {
         <Box sx={ {marginLeft:2}}>
            <IconButton sx={{color:teal[800]}} variant='contained' onClick={() => deleteTodo(task.id)}><DeleteIcon/></IconButton> 
            </Box>
+           <Box sx={ {backgroundColor:'' ,width:120}} display={'flex'} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'}>
             <IconButton sx={{color:teal[800]}} variant='contained' onClick= {() => minus(task.id)}><RemoveIcon/></IconButton>
 
-            <Typography sx={{color:teal[800]}}  variant='h4'>{task.num}</Typography>
+            <Typography color= {task.num < 0 ? red[800]:'green'}  variant='h4'>{task.num}</Typography>
 
             <IconButton sx={{color:teal[800]}} variant='contained' onClick= {() => plus(task.id)}><AddIcon/></IconButton>
+            
+            </Box>
             </Box>
            
 

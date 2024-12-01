@@ -10,13 +10,13 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '80%',
+  width: '90%',
   height:'80%',
   bgcolor: blueGrey[400],
   //border: '2px solid #000',
   boxShadow: 24,
   color:'white',
-  p: 4,
+  p: 2,
   display:'flex',
   flexDirection:'column',
   justifyContent:'space-between',
@@ -52,16 +52,16 @@ export default function BasicModal({player,numba,totalos,allNumbers}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h4" component="h2" sx={{ color:teal[900]}}>
+          <Typography id="modal-modal-title" variant="h4"  sx={{ color:teal[900]}}>
             Total
           </Typography>
 
-          <Box sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between', backgroundColor:'',width:'100%'}}>
-            <Typography variant='h5'  sx={{ mt: 2 ,color:teal[900]}}>
+          <Box sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between', backgroundColor:'',width:'100%',height:'80%'}}>
+          <Typography id="modal-modal-title" variant="h5"  sx={{ color:teal[900]}}>
               {player}
             </Typography>
 
-            <Typography  variant='h4' sx={{ mt: 2 ,color:teal[900]}}>
+            <Typography id="modal-modal-title" variant="h4"  sx={{ color:teal[900]}}>
               {numba}
             </Typography>
           </Box>
