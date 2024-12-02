@@ -6,7 +6,7 @@ import { Typography, Box, Stack } from "@mui/material";
 import TotalModal from "./TotalModal";
 import NavBar from "./NavBar";
 import FormatShapesIcon from "@mui/icons-material/FormatShapes";
-import { teal, deepOrange,green,blueGrey } from "@mui/material/colors";
+import { teal, deepOrange,green,blueGrey,red} from "@mui/material/colors";
 uuidv4();
 
 function TodoWrapper() {
@@ -126,7 +126,7 @@ function TodoWrapper() {
             <Typography variant='h5' sx={{ color:teal[900]}}  key={index}>{todo.task}</Typography>
           ))}
           numba={todos.map((todo, index) => (
-            <Typography  variant='h5' sx={{ color:teal[900]}} key={index}>{todo.num}</Typography>
+            <Typography  variant='h5'  color= {todo.num < 0 ? red[800]:'green'} key={index}>{todo.num}</Typography>
           ))}
           allNumbers={allNumbers}
           totalos={totalNum}
