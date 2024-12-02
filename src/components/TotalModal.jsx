@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box,styled} from '@mui/material'
+import {Box,styled,Stack} from '@mui/material'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -55,16 +55,21 @@ export default function BasicModal({player,numba,totalos,allNumbers}) {
           <Typography id="modal-modal-title" variant="h4"  sx={{ color:teal[900]}}>
             Total
           </Typography>
-
-          <Box sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between', backgroundColor:'',width:'100%',height:'80%'}}>
-          <Typography id="modal-modal-title" variant="h5"  sx={{ color:teal[900]}}>
+         
+          <Stack sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between' , backgroundColor:'',width:'100%',height:'80%'}}>
+         
+          {/* <Typography id="modal-modal-title" variant="h5"  sx={{ color:teal[900]}}> */}
+       <Box>
               {player}
-            </Typography>
-
-            <Typography id="modal-modal-title" variant="h4"  sx={{ color:teal[900]}}>
+            {/* </Typography> */}
+            
+            </Box>
+            <Box> 
+            {/* <Typography id="modal-modal-title" variant="h4"  sx={{ color:teal[900]}}> */}
               {numba}
-            </Typography>
-          </Box>
+            {/* </Typography> */}
+            </Box>
+          </Stack>
 
           <Typography variant='h4'  sx={{ mt: 2 ,color:teal[900]}} >
             סך הכל ריביי {totalos}

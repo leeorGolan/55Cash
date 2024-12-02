@@ -21,8 +21,7 @@ const handleSubmit = (e) =>{
       display:'flex',
       flexDirection:'row',
       justifyContent: "space-between",
-      alignItems: "center",
-    }}>
+      alignItems: "center",}}>
        
        <TextField sx={{ml:2 ,color:'white'}} onChange = {(event) => setValue(event.target.value)} value={value}/>
        

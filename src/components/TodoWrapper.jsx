@@ -123,10 +123,10 @@ function TodoWrapper() {
 
         <TotalModal
           player={todos.map((todo, index) => (
-            <Typography key={index}>{todo.task}</Typography>
+            <Typography variant='h5' sx={{ color:teal[900]}}  key={index}>{todo.task}</Typography>
           ))}
           numba={todos.map((todo, index) => (
-            <Typography key={index}>{todo.num}</Typography>
+            <Typography  variant='h5' sx={{ color:teal[900]}} key={index}>{todo.num}</Typography>
           ))}
           allNumbers={allNumbers}
           totalos={totalNum}
