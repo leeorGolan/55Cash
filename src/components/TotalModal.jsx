@@ -83,7 +83,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
           </Stack>
           {/* <Typography variant='h4'  sx={{ mt: 2 ,color:teal[900]}} > */}
         
-             {totalZero === 0 ?   <img src="/giphy.gif" alt="image"  style={{width:140,height:140}}/> : <GppBadIcon sx={{color:'red'}}/> }
+             {totalZero === 0 ?   <img src="/V.gif" alt="image"  style={{width:160,height:160}}/> :  <img src="/X.gif" alt="image"  style={{width:160,height:160}}/> }
             {/* </Typography> */}
            
           <Typography variant='h5'  sx={{ mt: 2 ,color:'#012030'}} >
