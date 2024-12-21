@@ -13,6 +13,7 @@ function TodoWrapper() {
   const [todos, setTodos] = useState(JSON.parse(window.localStorage.getItem("MY_TODOS") ?? '[]'));
 
   const [totalNum, setTotalNum] = useState(0);
+  const [zerolNum, setZeroNum] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("MY_TODOS", JSON.stringify(todos));
@@ -27,6 +28,7 @@ function TodoWrapper() {
         completed: false,
         isEditing: false,
         num: 0,
+        // zeroNum:0
       },
     ]);
     console.log(todos);
@@ -38,6 +40,7 @@ function TodoWrapper() {
         t.num = t.num + 1;
       }
     });
+
     setTodos([...todos]);
   };
 
@@ -51,13 +54,20 @@ function TodoWrapper() {
   };
 
   let sum = 0;
-  //  const allNumbers = () => {
+  let zero = 0
+   const zeroNumbers = () => {
   // todos.forEach(t => {
-  // todos.forEach( n.num => {sum += n.num})
+  todos.forEach( (n)=> {zero += n.num})
+  setZeroNum(zero)
+  console.log(zero);
+  }
+  
 
-  //}
-  // )
+  
   //setTodos([...todos])
+
+
+
   const allNumbers = () => {
     todos.forEach((t) => {
       sum += Math.abs(t.num);
@@ -65,6 +75,8 @@ function TodoWrapper() {
     setTotalNum(sum);
     console.log(sum);
   };
+
+
 
   const toggleComplete = (id) => {
     setTodos(
@@ -79,9 +91,15 @@ function TodoWrapper() {
   // const editTodo =id =>{
   //   setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing:!todo.isEditing } : todo  ))
   // }
+
+const clearList  = () =>{
+  setTodos([])
+}
+
+
   return (
     <>
-      <NavBar />
+      <NavBar clearList={clearList} />
       {/* <Box sx={{backgroundColor:'pink',minHeight:'100%',height:'100vh',width:'100vw'}}>
       <Typography>vbcvb</Typography>
       </Box> */}
@@ -91,7 +109,7 @@ function TodoWrapper() {
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
-          backgroundColor:blueGrey[200],
+          backgroundColor:'#45C4B0',
           height: "90vh",
           width: "100vw",
           mt: 5,
@@ -123,13 +141,15 @@ function TodoWrapper() {
 
         <TotalModal
           player={todos.map((todo, index) => (
-            <Typography variant='h5' sx={{ color:teal[900]}}  key={index}>{todo.task}</Typography>
+            <Typography variant='h5' sx={{ color:'#012030'}}  key={index}>{todo.task}</Typography>
           ))}
           numba={todos.map((todo, index) => (
             <Typography  variant='h5'  color= {todo.num < 0 ? red[800]:'green'} key={index}>{todo.num}</Typography>
           ))}
           allNumbers={allNumbers}
+          zeroNumbers={zeroNumbers}
           totalos={totalNum}
+          totalZero= {zerolNum}
         />
       </Box>
     </>

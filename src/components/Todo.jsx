@@ -14,7 +14,7 @@ function Todo({task,toggleComplete,deleteTodo,editTodo,num,plus,minus}) {
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          backgroundColor:blueGrey[300],
+          backgroundColor:'#DAFDBA',
           width:'100%',
          
           paddingRight:0,
@@ -26,21 +26,21 @@ function Todo({task,toggleComplete,deleteTodo,editTodo,num,plus,minus}) {
     
         <Box display={'flex'} flexDirection={'row'} alignItems={'center'}  >
         <Box sx={ {marginLeft:2}}>
-           <IconButton sx={{color:teal[800]}} variant='contained' onClick={() => deleteTodo(task.id)}><DeleteIcon/></IconButton> 
+           <IconButton sx={{color:'#012030'}} variant='contained' onClick={() => deleteTodo(task.id)}><DeleteIcon/></IconButton> 
            </Box>
            <Box sx={ {backgroundColor:'' ,width:120}} display={'flex'} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'}>
-            <IconButton sx={{color:teal[800]}} variant='contained' onClick= {() => minus(task.id)}><RemoveIcon/></IconButton>
+            <IconButton sx={{color:'#012030'}} variant='contained' onClick= {() => minus(task.id)}><RemoveIcon/></IconButton>
 
             <Typography color= {task.num < 0 ? red[800]:'green'}  variant='h4'>{task.num}</Typography>
 
-            <IconButton sx={{color:teal[800]}} variant='contained' onClick= {() => plus(task.id)}><AddIcon/></IconButton>
+            <IconButton sx={{color:'#012030'}} variant='contained' onClick= {() => plus(task.id)}><AddIcon/></IconButton>
             
             </Box>
             </Box>
            
 
            <Box display={'flex'} flexDirection={'row'} alignItems={'center'} justifyContent={'flex-end'}  minWidth={150} sx={{backgroundColor:''}}>
-            <Typography  variant='h5' sx={ {marginRight:2 ,color: teal[800]}} 
+            <Typography className='rubik-Heb'  variant='h5' sx={ {marginRight:2 ,color: '#012030'}} 
             onClick={() => toggleComplete(task.id)}>{task.task}</Typography>
         </Box>
       {/* </Box> */}
