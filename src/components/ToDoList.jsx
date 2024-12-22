@@ -23,7 +23,7 @@ const handleSubmit = (e) =>{
       justifyContent: "space-between",
       alignItems: "center",}}>
        
-       <TextField sx={{ml:2 ,color:'white'}} onChange = {(event) => setValue(event.target.value)} value={value}/>
+       <TextField sx={{ml:2 ,input :{color:'white'} }} onChange = {(event) => setValue(event.target.value)} value={value}/>
        
       <Button  sx={{mr:1,backgroundColor:'#9AEBA3'}} variant='contained'
       onClick={handleSubmit}> <AddIcon sx={{color:'#012030',width:40,height:40}} /> </Button>

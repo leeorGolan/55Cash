@@ -31,7 +31,8 @@ const BypassButton = styled(Button)(({ theme }) => ({
   borderRadius:10,
   margin:8,
   backgroundColor:'#9AEBA3',
-  color:'#012030'
+  color:'#012030',
+  fontWeight:'bold'
  
   //border:10
  }));
@@ -83,7 +84,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
           </Stack>
           {/* <Typography variant='h4'  sx={{ mt: 2 ,color:teal[900]}} > */}
         
-             {totalZero === 0 ?   <img src="/V.gif" alt="image"  style={{width:160,height:160}}/> :  <img src="/X.gif" alt="image"  style={{width:160,height:160}}/> }
+             {totalZero === 0 ?   <img src="/V2.gif" alt="image"  style={{width:260,height:160}}/> :  <img src="/X2.gif" alt="image"  style={{width:260,height:160}}/> }
             {/* </Typography> */}
            
           <Typography variant='h5'  sx={{ mt: 2 ,color:'#012030'}} >
