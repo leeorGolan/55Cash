@@ -87,7 +87,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
              {totalZero === 0 ?   <img src="/V2.gif" alt="image"  style={{width:260,height:160}}/> :  <img src="/X2.gif" alt="image"  style={{width:260,height:160}}/> }
             {/* </Typography> */}
            
-          <Typography variant='h5'  sx={{ mt: 2 ,color:'#012030'}} >
+          <Typography variant='h5' className='rubik-bubbles-regular'  sx={{ mt: 2 ,color:'#012030'}} >
             סך הכל ריביי {totalos}
             </Typography>
         </Box>

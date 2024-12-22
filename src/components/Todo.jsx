@@ -85,7 +85,7 @@ const [anchorEl, setAnchorEl] = React.useState(null);
            
 
            <Box display={'flex'} flexDirection={'row'} alignItems={'center'} justifyContent={'flex-end'}  minWidth={150} sx={{backgroundColor:''}}>
-            <Typography className='rubik-Heb'  variant='h5' sx={ {marginRight:2 ,color: '#012030'}} 
+            <Typography className='bubbles'  variant='h5' sx={ {marginRight:2 ,color: '#012030'}} 
             onClick={() => toggleComplete(task.id)}>{task.task}</Typography>
         </Box>
       {/* </Box> */}
