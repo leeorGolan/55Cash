@@ -98,6 +98,13 @@ const clearList  = () =>{
 }
 
 
+function sorti(a, b) {
+
+    let sortedNumba ;
+    sortedNumba = todos.sort(function(a, b){return b.num- a.num})
+    //console.log(sortedNumba)
+}
+
   return (
     <>
       <NavBar clearList={clearList} />
@@ -151,6 +158,7 @@ const clearList  = () =>{
           zeroNumbers={zeroNumbers}
           totalos={totalNum}
           totalZero= {zerolNum}
+          sorti={sorti}
         />
       </Box>
     </>

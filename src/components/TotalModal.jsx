@@ -37,7 +37,7 @@ const BypassButton = styled(Button)(({ theme }) => ({
   //border:10
  }));
 
-export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers ,totalZero}) {
+export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers ,totalZero,sorti}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -51,10 +51,15 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
     // }else{
     // <GppBadIcon sx={{color:'red'}} />)
     // }}  
-    let tester =0
+   
+
+
+
+
+    
   return (
     <div>
-      <BypassButton  sx={{mb:2 }}  variant="contained" onClick={() => { handleOpen(), allNumbers() ,zeroNumbers()}}>
+      <BypassButton  sx={{mb:2 }}  variant="contained" onClick={() => { handleOpen(), allNumbers() ,zeroNumbers() ,sorti()}}>
         Total
       </BypassButton>
       <Modal
@@ -68,7 +73,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
             Total
           </Typography>
          
-          <Stack sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between' , backgroundColor:'',width:'100%',height:'80%'}}>
+          <Stack sx={{display:"flex",flexDirection:"row" , justifyContent:'space-between' ,width:'100%',height:'80%'}}>
          
           {/* <Typography id="modal-modal-title" variant="h5"  sx={{ color:teal[900]}}> */}
        <Box>
@@ -82,6 +87,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
             {/* </Typography> */}
             </Box>
           </Stack>
+
           {/* <Typography variant='h4'  sx={{ mt: 2 ,color:teal[900]}} > */}
         
              {totalZero === 0 ?   <img src="/V2.gif" alt="image"  style={{width:260,height:160}}/> :  <img src="/X2.gif" alt="image"  style={{width:260,height:160}}/> }
