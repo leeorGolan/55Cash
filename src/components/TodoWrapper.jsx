@@ -8,6 +8,8 @@ import NavBar from "./NavBar";
 import FormatShapesIcon from "@mui/icons-material/FormatShapes";
 import { teal, deepOrange,green,blueGrey,red} from "@mui/material/colors";
 import Popover from '@mui/material/Popover';
+import CssBaseline from '@mui/material/CssBaseline';
+
 uuidv4();
 
 function TodoWrapper() {
@@ -60,7 +62,7 @@ function TodoWrapper() {
   // todos.forEach(t => {
   todos.forEach( (n)=> {zero += n.num})
   setZeroNum(zero)
-  console.log(zero);
+  // console.log(zero);
   }
   
 
@@ -74,7 +76,7 @@ function TodoWrapper() {
       sum += Math.abs(t.num);
     });
     setTotalNum(sum);
-    console.log(sum);
+    // console.log(sum);
   };
 
 
@@ -102,12 +104,19 @@ function sorti(a, b) {
 
     let sortedNumba ;
     sortedNumba = todos.sort(function(a, b){return b.num- a.num})
-    //console.log(sortedNumba)
+    // console.log(sortedNumba)
+
+    
 }
 
   return (
-    <>
-      <NavBar clearList={clearList} />
+    <Box sx={{ display: 'flex' }}>
+       <CssBaseline />
+      <NavBar clearList={clearList}  position='fixed'/>
+      
+      
+      
+      
       {/* <Box sx={{backgroundColor:'pink',minHeight:'100%',height:'100vh',width:'100vw'}}>
       <Typography>vbcvb</Typography>
       </Box> */}
@@ -161,7 +170,7 @@ function sorti(a, b) {
           sorti={sorti}
         />
       </Box>
-    </>
+    </Box>
   );
 }
 
