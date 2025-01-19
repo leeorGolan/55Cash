@@ -3,7 +3,7 @@ import {Box,styled,Stack} from '@mui/material'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { teal,deepOrange,green,blueGrey } from '@mui/material/colors';
+import { teal,deepOrange,green,blueGrey ,red} from '@mui/material/colors';
 import DoneIcon from '@mui/icons-material/Done';
 import GppBadIcon from '@mui/icons-material/GppBad';
 const style = {
@@ -12,7 +12,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90%',
-  height:'80%',
+  height:'90%',
   bgcolor: '#45C4B0',
   //border: '2px solid #000',
   boxShadow: 24,
@@ -37,7 +37,7 @@ const BypassButton = styled(Button)(({ theme }) => ({
   //border:10
  }));
 
-export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers ,totalZero,sorti}) {
+export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers ,totalZero,sorti ,totalPlusNumbersFunction,totalMinusNumbersFunction,totalPlusNumbers,totalMinusNumbers}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -59,7 +59,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
     
   return (
     <div>
-      <BypassButton  sx={{mb:2 }}  variant="contained" onClick={() => { handleOpen(), allNumbers() ,zeroNumbers() ,sorti()}}>
+      <BypassButton  sx={{mb:2 }}  variant="contained" onClick={() => { handleOpen(), allNumbers() ,zeroNumbers() ,sorti(),totalPlusNumbersFunction(),totalMinusNumbersFunction()}}>
         Total
       </BypassButton>
       <Modal
@@ -69,7 +69,7 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h4"  sx={{ color:'#012030'}}>
+          <Typography id="modal-modal-title" variant="h5"  sx={{ color:'#012030'}}>
             Total
           </Typography>
          
@@ -89,13 +89,23 @@ export default function BasicModal({player,numba,totalos,allNumbers,zeroNumbers 
           </Stack>
 
           {/* <Typography variant='h4'  sx={{ mt: 2 ,color:teal[900]}} > */}
-        
-             {totalZero === 0 ?   <img src="/V2.gif" alt="image"  style={{width:260,height:160}}/> :  <img src="/X2.gif" alt="image"  style={{width:260,height:160}}/> }
+        <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center' ,width:'70%',marginRight:8,marginLeft:8}}>
+          <Typography variant='h6' className='rubik-bubbles-regular'  sx={{ mt: 0 ,color:'green'}} >
+            פלוסים:{totalPlusNumbers}
+            </Typography>
+
+            
+          <Typography variant='h6' className='rubik-bubbles-regular'  sx={{ mt: 0 ,color: red[800]}} >
+            מינוסים:{totalMinusNumbers}
+            </Typography>
+            </Box>
+            
             {/* </Typography> */}
            
-          <Typography variant='h5' className='rubik-bubbles-regular'  sx={{ mt: 2 ,color:'#012030'}} >
+          <Typography variant='h6' className='rubik-bubbles-regular'  sx={{ mt: 0 ,color:'#012030'}} >
             סך הכל ריביי {totalos}
             </Typography>
+            {totalZero === 0 ?   <img src="/V2.gif" alt="image"  style={{width:240,height:140}}/> :  <img src="/X2.gif" alt="image"  style={{width:240,height:140}}/> }
         </Box>
       </Modal>
     </div>

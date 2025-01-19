@@ -17,6 +17,8 @@ function TodoWrapper() {
 
   const [totalNum, setTotalNum] = useState(0);
   const [zerolNum, setZeroNum] = useState(0);
+  const [totalPlusNumbers, setTotalPlusNumbers] = useState(0);
+  const [totalMinusNumbers, setTotalMinusNumbers] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("MY_TODOS", JSON.stringify(todos));
@@ -56,8 +58,15 @@ function TodoWrapper() {
     setTodos([...todos]);
   };
 
+
+
+  let totalPlusNumbersCounter = 0;
+  let totalMinusNumbersCounter = 0;
   let sum = 0;
   let zero = 0
+
+
+
    const zeroNumbers = () => {
   // todos.forEach(t => {
   todos.forEach( (n)=> {zero += n.num})
@@ -80,7 +89,30 @@ function TodoWrapper() {
   };
 
 
+  
+  const totalPlusNumbersFunction = () => {
+    todos.forEach((t) => {
+      if (t.num > 0){
+        totalPlusNumbersCounter += (t.num);
+    }
+    });
+    setTotalPlusNumbers(totalPlusNumbersCounter);
+     console.log(totalPlusNumbersCounter);
+  };
 
+
+
+  const totalMinusNumbersFunction = () => {
+    todos.forEach((t) => {
+      if (t.num < 0){
+        totalMinusNumbersCounter += (t.num);
+    }
+    });
+    setTotalMinusNumbers(totalMinusNumbersCounter);
+     console.log(totalMinusNumbersCounter);
+  };
+
+  
   const toggleComplete = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -168,6 +200,10 @@ function sorti(a, b) {
           totalos={totalNum}
           totalZero= {zerolNum}
           sorti={sorti}
+          totalPlusNumbersFunction={totalPlusNumbersFunction}
+          totalMinusNumbersFunction={totalMinusNumbersFunction}
+          totalPlusNumbers={totalPlusNumbers}
+          totalMinusNumbers={totalMinusNumbers}
         />
       </Box>
     </Box>
